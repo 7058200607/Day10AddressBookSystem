@@ -13,6 +13,7 @@ namespace Day10AddressBookSystem
             Console.WriteLine(" Welcome to Address Book Program");
           AddressBookSystem.CreateContact();
             AddressBookSystem.Modify();
+            AddressBookSystem.Delete();
         }
     }
 }
