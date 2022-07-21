@@ -14,6 +14,7 @@ namespace Day10AddressBookSystem
           AddressBookSystem.CreateContact();
             AddressBookSystem.Modify();
             AddressBookSystem.Delete();
+            AddressBookSystem.ContactList();
         }
     }
 }
