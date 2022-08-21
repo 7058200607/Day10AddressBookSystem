@@ -23,6 +23,7 @@ namespace Day10AddressBookSystem
             Console.WriteLine("6.To find a person in state or city:");
             Console.WriteLine("7.To view a person in state or city:");
             Console.WriteLine("8.to Count by City or State:");
+            Console.WriteLine("9.Sort person details : ");
 
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -61,6 +62,12 @@ namespace Day10AddressBookSystem
                 case 8:
                     addressBook.AddNewAddressBook();
                     addressBook.CountByCityOrState();
+                    break;
+                case 9:
+                    addressBook.AddNewAddressBook();
+                    addressBook.ViewAddressBook();
+                    Console.WriteLine("After sorting:");
+                    addressBook.SortPersonName();
                     break;
 
 
