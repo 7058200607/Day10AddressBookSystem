@@ -21,6 +21,7 @@ namespace Day10AddressBookSystem
             int howMany = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= howMany; i++)
             {
+
                 Console.WriteLine("\nEnter your First Name: ");
                 string firstName = Console.ReadLine();
                 Console.WriteLine("Enter your Last Name: ");
@@ -37,6 +38,7 @@ namespace Day10AddressBookSystem
                 long phoneNumber = Convert.ToInt64(Console.ReadLine());
                 Console.WriteLine("Enter your Email-ID: ");
                 string email = Console.ReadLine();
+
             }
             return contactList;
         }
@@ -203,8 +205,20 @@ namespace Day10AddressBookSystem
                 }
             }
         }
+        public void CountByCityOrState()
+        {
+            int count = 0;
+            Console.WriteLine("enter the city or state name");
+            string city = Console.ReadLine();
+            foreach (KeyValuePair<string, List<Contact>> user in addressBookDict)
+            {
+                count += user.Value.Count(x => x.city == city || x.state == city);
+            }
+            Console.WriteLine("No of persons in city " + city + " is " + count);
+        }
     }
 }
+
 
 
 
