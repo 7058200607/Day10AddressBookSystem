@@ -21,6 +21,7 @@ namespace Day10AddressBookSystem
             Console.WriteLine("4.Delete Contact:");
             Console.WriteLine("5.Add Multiple Addressbook");
             Console.WriteLine("6.To find a person in state or city:");
+            Console.WriteLine("7.To view a person in state or city:");
 
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -53,6 +54,10 @@ namespace Day10AddressBookSystem
                 case 6:
                     addressBook.SearchPersonInCityOrState();
                     break;
+                case 7:
+                    addressBook.ViewPersonInCityOrState();
+                    break;
+
 
             }
         }
