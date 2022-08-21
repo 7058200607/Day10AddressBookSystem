@@ -39,8 +39,28 @@ namespace Day10AddressBookSystem
                 Console.WriteLine("Enter your Email-ID: ");
                 string email = Console.ReadLine();
 
+                if (CheckIfAlreadyPresent(firstName, lastName))
+                    Console.WriteLine("Already exist");
+                else
+                {
+                    contactList.Add(new Contact()
+                    {
+                        firstName = firstName,
+                        lastName = lastName,
+                        address = address,
+                        city = city,
+                        state = state,
+                        zipcode = zipcode,
+                        email = email,
+                        phoneNumber = phoneNumber
+                    });
+                }
             }
             return contactList;
+        }
+        public bool CheckIfAlreadyPresent(string firstName, string lastName) //using lambda for no duplicate entry
+        {
+            return contactList.Any(x => x.firstName == firstName && x.lastName == lastName);
         }
         public void ViewContact()
         {
@@ -182,6 +202,8 @@ namespace Day10AddressBookSystem
                     }
                 }
             }
+            if (found == 0)
+                Console.WriteLine("No record found");
         }
         public void ViewPersonInCityOrState()
         {
@@ -251,6 +273,7 @@ namespace Day10AddressBookSystem
                     break;
             }
             ViewAddressBook();
+
         }
     }
 }
